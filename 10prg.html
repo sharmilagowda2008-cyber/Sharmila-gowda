@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Calculator</title>
+</head>
+<body>
+<center>
+<h2>Simple calculator</h2>
+<input type="text" id="result" readonly><br><br>
+  <table>
+    <tr>
+      <td><button onclick="addValue('7')">7</button></td>
+      <td><button onclick="addValue('8')">8</button></td>
+      <td><button onclick="addValue('9')">9</button></td>
+      <td><button onclick="addValue('+')
+      ">+</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="addValue('4')">4</button></td>
+      <td><button onclick="addValue('5')">5</button></td>
+      <td><button onclick="addValue('6')">6</button></td>
+      <td><button onclick="addValue('-')
+      ">-</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="addValue('1')">1</button></td>
+      <td><button onclick="addValue('2')">2</button></td>
+      <td><button onclick="addValue('3')">3</button></td>
+      <td><button onclick="addValue('*')
+      ">*</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="addValue('0')">0</button></td>
+      <td><button onclick="addValue('.')">.</button></td>
+      <td><button onclick="calculate()">=</button></td>
+      <td><button onclick="addValue('/')
+      ">/</button></td>
+    </tr>
+    <tr>
+      <td colspan="4"><button onclick="clearResult()">clear
+      </button></td>
+    </tr>
+  </table>
+</center>
+<script>
+  function addValue(val){
+    document.getElementById("result").value+=val;
+  }
+  function calculate(){
+    try{
+      document.getElementById("result").value=eval(document.getElementById("result").value);
+    }catch(e){
+      document.getElementById("result").value="Error";
+    }
+  }
+  function clearResult(){
+    document.getElementById("result").value="";}
+</script>
+</body>
+</html>
